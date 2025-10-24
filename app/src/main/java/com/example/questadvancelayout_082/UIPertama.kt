@@ -130,16 +130,68 @@ fun ActivitasPertama(modifier: Modifier) {
                     }
                 }
             }
-            Box(
+            Column(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    stringResource(R.string.copy),
+                Card(
                     modifier = Modifier
-                        .align(Alignment.BottomCenter)
-                        .padding(bottom = 50.dp)
-                )
+                        .fillMaxWidth(1f)
+                        .padding(12.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color(0xFF006400)
+                    )
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        val gambar = painterResource(R.drawable.logo_umy)
+                        Image(
+                            painter = gambar,
+                            contentDescription = null,
+                            modifier = Modifier.size(100.dp).padding(5.dp)
+                        )
+                        Spacer(modifier = Modifier.width(30.dp))
+                        Column() {
+                            Text(
+                                stringResource(R.string.nama),
+                                fontSize = 25.sp,
+                                fontFamily = FontFamily.SansSerif,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White,
+                                modifier = Modifier.padding(top = 15.dp)
+                            )
+                            Text(
+                                stringResource(R.string.nohp),
+                                fontSize = 20.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color(0xFF4FC3F7),
+                                modifier = Modifier.padding(top = 10.dp)
+                            )
+                            Text(
+                                stringResource(R.string.alamat),
+                                fontSize = 20.sp,
+                                color = Color.White,
+                                modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)
+                            )
+
+                        }
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) {
+                    Text(
+                        stringResource(R.string.copy),
+                        modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                            .padding(bottom = 50.dp)
+                    )
+                }
             }
         }
     }
